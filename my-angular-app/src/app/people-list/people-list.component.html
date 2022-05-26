@@ -1,0 +1,13 @@
+<ng-template #noListBlock>
+  <h1>No List!</h1>
+</ng-template>
+
+<div *ngIf="showList; else noListBlock">
+  <div *ngFor="let person of people">
+    <h3>{{person.name}}</h3>
+    <p>Age: {{person.age}}</p>
+    <p>Hair: {{person.hairColour}}</p>
+  </div>
+</div>
+
+
