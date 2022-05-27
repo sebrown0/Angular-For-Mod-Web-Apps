@@ -7,6 +7,12 @@ import { Input, OnInit, Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'my-angular-app';
+  initialCount: number = 0;
+  showCongratsMsg: boolean = false;
+
+  setCongratsFlag(): void {
+    this.showCongratsMsg = true;
+  }
 
   doSomething():void {
     alert('Do something...')

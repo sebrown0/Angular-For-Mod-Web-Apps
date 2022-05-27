@@ -1,7 +1,7 @@
 <!-- <app-example name="Steve" age=21 hairColour="None"></app-example> -->
 
 <!-- Use the ng template for this component becuase name is not supplied. -->
-<app-example></app-example>
+<!-- <app-example></app-example> -->
 
 <!-- <app-people-list></app-people-list> -->
 <!-- <app-event-handling></app-event-handling> -->
@@ -13,12 +13,24 @@
   (d)="doAnotherThing()"
 ></app-multiple-choice> -->
 
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!--
+  Bind showMsg in app-congratulations-message tp showCongratsMsg in  app-component.
+  app-congratulations-message has an *ngIf for showMsg.
+
+  The initial count comes from app-comp and is assigned to the count in app-counter...
+  From here all the counting is done in this component. When the threshold is reached
+  the congratsEvent is emmitted (in app-counter-button) which calls
+  setCongratsFlag() in (AppComponent).
+
+  This sets showCongratsMsg which is bound to CongratulationsMessageComponent.showMsg
+  and the *ngIf...
+-->
+<app-congratulations-message [showMsg]="showCongratsMsg"></app-congratulations-message>
+
+<app-counter-button
+  (congratsEvent)="setCongratsFlag()"
+  [count]="initialCount"
+></app-counter-button>
+
 
 <router-outlet></router-outlet>
