@@ -25,12 +25,16 @@
   This sets showCongratsMsg which is bound to CongratulationsMessageComponent.showMsg
   and the *ngIf...
 -->
-<app-congratulations-message [showMsg]="showCongratsMsg"></app-congratulations-message>
+<!-- <app-congratulations-message [showMsg]="showCongratsMsg"></app-congratulations-message>
 
 <app-counter-button
+  *ngIf="showCounterButton"
   (congratsEvent)="setCongratsFlag()"
   [count]="initialCount"
 ></app-counter-button>
 
+<button (click)="toggleCounterBtn()">ShowHide</button> -->
 
+<!-- <app-params-example></app-params-example> -->
+<app-nav-bar></app-nav-bar>
 <router-outlet></router-outlet>

@@ -1,0 +1,9 @@
+<app-congratulations-message [showMsg]="showCongratsMsg"></app-congratulations-message>
+
+<app-counter-button
+  *ngIf="showCounterButton"
+  (congratsEvent)="setCongratsFlag()"
+  [count]="initialCount"
+></app-counter-button>
+
+<button (click)="toggleCounterBtn()">ShowHide</button>
